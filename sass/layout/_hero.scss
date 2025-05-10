@@ -1,0 +1,70 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+
+.hero {
+    padding: 16px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    @include mix.breakpoint(desktop){
+        flex-direction: row;
+        padding: 16px 32px;;
+    }
+    &::before { // background-color hero
+        content: '';
+        position: absolute;
+        width: 300vh;
+        height: 100%;
+        left: -50%;
+        top: 0;
+        background-image: linear-gradient(to right bottom, rgba(var.$color-light-blue, 40%), rgba(var.$color-green, 40%));
+        z-index: -1;
+    }
+    &__content {
+        padding-bottom: 16px;
+        position: relative;
+        @include mix.breakpoint(tablet) {
+            padding: 16px;
+            width: 100%;
+        }
+        @include mix.breakpoint(desktop) {
+            padding: 16px;
+            width: 90%;
+        }
+        &__title{
+            margin-bottom: 16px;
+            @include mix.heading-l;
+            @include mix.breakpoint(tablet) {
+                margin-bottom: 32px;
+            }
+            @include mix.breakpoint(desktop) {
+                @include mix.heading-xl;
+                margin-bottom: 32px;
+            }
+        }
+        &__subtitle {
+            font-size: 22px;
+            margin-top: 20px;
+            @include mix.breakpoint(tablet) {
+                margin: 24px 0;
+            }
+            @include mix.breakpoint(desktop) {
+                margin-top: 50px;
+            }
+        }
+    }
+    &__img_container {
+        img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: contain;
+        }
+        @include mix.breakpoint(tablet) {
+            display: block;                
+        }
+    }
+}

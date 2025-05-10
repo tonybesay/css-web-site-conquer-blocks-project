@@ -1,0 +1,43 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.blog {
+    margin: 0 auto;
+    h1 {
+        line-height: 58px;
+    }
+    &__content {
+        padding: 16px;
+        &__img-container {
+            width: 100%;
+            text-align: center;
+        }
+        &__article {
+            margin-top: 24px;
+            @include mix.breakpoint(desktop){
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: start;
+                gap: 80px;
+            }
+            p {
+                margin: 12px 0;
+            }
+            &__container {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        &__title {
+            margin: 12px 0;
+            @include mix.heading-s;
+            @include mix.breakpoint(tablet){
+                @include mix.heading-s
+            }
+            @include mix.breakpoint(desktop){
+                @include mix.heading-m
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+
+.aviso-legal {
+    margin: 24px;
+    h1 {
+        margin: 16px;
+        @include mix.heading-m;
+        @include mix.breakpoint(tablet) {
+            @include mix.heading-l;
+            margin: 24px;
+
+        }
+        @include mix.breakpoint(desktop) {
+            @include mix.heading-xl;
+            margin: 32px;
+        }
+    }
+    h2 {
+        margin: 12px;
+        @include mix.heading-xs;
+        @include mix.breakpoint(tablet) {
+            @include mix.heading-s;
+            margin: 28px;
+        }
+        @include mix.breakpoint(desktop) {
+            @include mix.heading-m;
+            margin: 24px;
+        }
+    }
+    p {
+        margin: 8px;
+        @include mix.breakpoint(tablet) {
+            margin: 12px;
+        }
+        @include mix.breakpoint(desktop) {
+            margin: 16px;
+        }
+    }
+
+}

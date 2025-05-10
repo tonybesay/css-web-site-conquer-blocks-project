@@ -1,0 +1,64 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.blogs {
+    padding: 22px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    @include mix.breakpoint(tablet){
+        padding: 16px;
+        flex-direction: row;
+    }
+    @include mix.breakpoint(desktop){
+        padding: 24px;
+        flex-direction: row;
+    }
+    &__container {
+        margin: 16px auto;
+        padding: 24px;
+        box-shadow: 1px 1px 10px var.$color-grey;
+        max-width: 450px;
+        transition: transform 0.3s ease;
+        &:hover{
+            transform: scale(1.05);
+        }
+        &__link {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            @include mix.breakpoint(tablet){
+                max-width: 500px;
+            }
+            @include mix.breakpoint(desktop){
+                max-width: 600px;
+            }
+            &__img {
+                text-align: center;
+                img{
+                    width:100%;
+                    object-fit: cover;
+                    @include mix.breakpoint(tablet){
+                        height: 150px;
+                    }
+                    @include mix.breakpoint(desktop){
+                        height: 260px;
+                    }
+                }
+
+            }
+            &__title {
+                @include mix.heading-s;
+                @include mix.breakpoint(tablet){
+                    @include mix.heading-xs;
+                    height: 160px;
+                }
+                @include mix.breakpoint(desktop){
+                    @include mix.heading-m;
+                    height: 170px;
+                }
+            }
+        }
+    }
+}

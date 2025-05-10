@@ -1,0 +1,13 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.button {
+    @include mix.button1;
+}
+
+.button2 {
+    @include mix.button2;
+}
+.button3 {
+    @include mix.button3;
+}

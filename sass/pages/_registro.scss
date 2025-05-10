@@ -1,0 +1,19 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.registro .hero{
+    @include mix.breakpoint(tablet){
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    &__content {
+        @include mix.breakpoint(tablet){
+            width: 50%;
+            padding-left: 100px;
+        }
+    }
+    img{
+        width: 30%;
+    }
+}
+

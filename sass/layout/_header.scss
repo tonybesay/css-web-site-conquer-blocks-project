@@ -1,0 +1,29 @@
+@use '../abstracts/variables' as var;
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    position: relative;
+    &__img_container {
+        width: 200px;
+        img {
+            width: 100%;
+        }
+    }
+    &__navbar {
+        ul {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            a{
+                &:hover{
+                    font-weight: 600;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

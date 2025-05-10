@@ -1,0 +1,25 @@
+@use '../abstracts/variables' as var;
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 16px;
+    color: var.$color-white;
+    position: relative;
+    background-color: var.$color-bg-footer-black;
+    &::before { // background-color footer
+        content: '';
+        position: absolute;
+        width: 300vh;
+        height: 100%;
+        left: -50%;
+        top: 0;
+        background-color: var.$color-bg-footer-black;
+        z-index: -1;
+
+    }
+
+    a {
+        color: var.$color-white;
+    }
+}

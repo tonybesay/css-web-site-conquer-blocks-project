@@ -1,0 +1,100 @@
+@use '../abstracts/variables' as var;
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (max-width: 3000px) and (min-width: 1025px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (max-width: 1024px) and (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media (max-width: 768px) and (min-width: 320px) {
+      @content;
+    }
+  } 
+}
+
+
+//mixins reset
+
+@mixin reset {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@mixin reset-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+// mixins buttons
+@mixin button1 {
+  padding: 8px 12px;
+  background-color: var.$color-grey;
+  font-weight: 400;
+  color: var.$color-white;
+  &:hover {
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 17px;
+  }
+}
+@mixin button2 {
+  padding: 8px 12px;
+  font-weight: 400;
+  color: var.$color-black;
+  border: 2px solid var.$color-black;
+  background-color: var.$color-white;
+  text-align: center;
+  width: 100%;
+  &:hover {
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 17px;
+    transition: all 0.2s ease;
+  }
+}
+@mixin button3 {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: linear-gradient(to right, var.$color-light-blue 30%, var.$color-green);
+  font-weight: 400;
+  color: var.$color-white;
+  &:hover {
+    text-decoration: underline;
+    font-weight: 500;
+  }
+}
+
+
+// mixins Typography
+
+@mixin heading-xl {
+  font-size: 54px;
+  line-height: 55px;
+  font-weight: 700;
+}
+@mixin heading-l {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 48px;
+}
+@mixin heading-m {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+}
+@mixin heading-s {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 32px;
+}
+@mixin heading-xs {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
